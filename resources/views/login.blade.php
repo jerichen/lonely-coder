@@ -11,7 +11,7 @@
 <section class="login-chart login">
     <div class="container">
         <div class="flex">
-            <div class="prev-btn" onclick="history.back();">
+            <div class="prev-btn" onclick="javascript:location.href ='{{route('welcome')}}'">
                 <span></span><span></span><span></span>
             </div>
             <h2 class="page-title">
