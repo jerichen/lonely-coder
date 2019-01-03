@@ -1,0 +1,538 @@
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+/*! normalize.css v3.0.0 | Base | MIT License | git.io/normalize */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/*! normalize.css v3.0.0 | Links | MIT License | git.io/normalize */
+a {
+  background: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/*! normalize.css v3.0.0 | Typography | MIT License | git.io/normalize */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/*! normalize.css v3.0.0 | Embedded Content | MIT License | git.io/normalize */
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/*! normalize.css v3.0.0 | Figures | MIT License | git.io/normalize */
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/*! normalize.css v3.0.0 | Forms | MIT License | git.io/normalize */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+/*! normalize.css v3.0.0 | Tables | MIT License | git.io/normalize */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+section.landing .login ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+section.login form > label::after {
+  content: '';
+  display: block;
+}
+
+.row, .flex, section.landing, section.landing .logo-set, section.login form .pw-keep {
+  display: flex;
+}
+
+section.login form .pw-keep {
+  justify-content: space-between;
+}
+
+.row, .flex {
+  flex-wrap: wrap;
+}
+
+.sr-only {
+  position: absolute !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  font-size: 0 !important;
+}
+
+*, *::before, *::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, 'Noto Sans TC', sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.025em;
+}
+
+a {
+  text-decoration: none;
+}
+@media (min-width: 1024px) {
+  a {
+    transition: .5s;
+  }
+}
+
+img {
+  display: block;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+html, body {
+  min-height: 100%;
+  height: 100%;
+}
+
+section.login-chart .container {
+  width: 305px;
+}
+section.landing {
+  height: 100%;
+  align-items: center;
+}
+section.landing .container .flex {
+  justify-content: center;
+}
+section.landing .logo-set {
+  flex-direction: column;
+}
+section.landing .logo-set img.slogan {
+  height: 65px;
+  align-self: flex-end;
+}
+section.landing .logo-set img.logo {
+  height: 50px;
+}
+section.landing .login {
+  width: 100%;
+}
+section.landing .login ul {
+  margin-top: 75px;
+}
+section.landing .login ul li {
+  margin-top: 25px;
+}
+section.landing .login ul li a {
+  display: block;
+  padding: 0 10px;
+  font-size: 18px;
+  line-height: 46px;
+  text-align: center;
+  border: 1px solid;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+}
+section.landing .login ul li a.kkbox-id {
+  color: #00ADCC;
+  border-color: #00ADCC;
+}
+section.landing .login ul li a.kkbox-id:hover {
+  color: #fff;
+  background-color: #00ADCC;
+}
+section.landing .login ul li a.facebook-id {
+  color: #777777;
+  border-color: #777777;
+}
+section.landing .login ul li a.facebook-id:hover {
+  color: #fff;
+  background-color: #777777;
+}
+section.login .container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+section.login .prev-btn {
+  position: relative;
+  width: 100%;
+  height: 36px;
+  margin-bottom: 50px;
+}
+section.login .prev-btn span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #00ADCC;
+}
+section.login .prev-btn span:nth-child(1), section.login .prev-btn span:nth-child(3) {
+  width: 7px;
+}
+section.login .prev-btn span:nth-child(1) {
+  -moz-transform: rotate(45deg) translate3d(14px, 14px, 0);
+  -ms-transform: rotate(45deg) translate3d(14px, 14px, 0);
+  -webkit-transform: rotate(45deg) translate3d(14px, 14px, 0);
+  transform: rotate(45deg) translate3d(14px, 14px, 0);
+}
+section.login .prev-btn span:nth-child(3) {
+  -moz-transform: rotate(-45deg) translate3d(-10px, 10px, 0);
+  -ms-transform: rotate(-45deg) translate3d(-10px, 10px, 0);
+  -webkit-transform: rotate(-45deg) translate3d(-10px, 10px, 0);
+  transform: rotate(-45deg) translate3d(-10px, 10px, 0);
+}
+section.login .prev-btn span:nth-child(2) {
+  top: 50%;
+  width: 23px;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+section.login h2 {
+  margin: 0 0 10px;
+  color: #00ADCC;
+  font-size: 36px;
+  font-weight: 500;
+}
+section.login h4 {
+  margin: 10px 0 0;
+  color: #00ADCC;
+  font-size: 24px;
+  font-weight: 300;
+}
+section.login .hr {
+  width: 100%;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  border-top: 1px solid #CACACA;
+  border-bottom: 1px solid #EAEAEA;
+}
+section.login form {
+  width: 100%;
+}
+section.login form > label {
+  display: block;
+  position: relative;
+  margin-top: 35px;
+  font-size: 18px;
+}
+section.login form > label::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: #777777;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+section.login form > label .label-title {
+  position: absolute;
+  display: block;
+  bottom: 50%;
+  color: #373737;
+  line-height: 1.15;
+  -moz-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+section.login form > label .label-title span {
+  display: none;
+}
+section.login form > label input {
+  display: block;
+  width: 100%;
+  padding: 0;
+  line-height: 47px;
+  border: 0;
+  outline: none;
+  border-bottom: 1px solid #fff;
+}
+section.login form > label:hover .label-title, section.login form > label.hasValue .label-title {
+  bottom: 100%;
+  color: #CACACA;
+  font-size: 13px;
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+section.login form > label:hover .label-title span, section.login form > label.hasValue .label-title span {
+  display: block;
+}
+section.login form > div label {
+  font-size: 18px;
+  font-weight: 500;
+}
+section.login form > div .description {
+  margin-top: 10px;
+  padding-left: 24px;
+  color: #CACACA;
+  font-size: 14px;
+}
+section.login form > div + div {
+  margin-top: 20px;
+}
+section.login form > div.focus label {
+  color: #00ADCC;
+}
+section.login form > div.pw-keep label {
+  font-size: 15px;
+  font-weight: 300;
+}
+section.login form [type*="radio"] {
+  position: relative;
+  top: -2px;
+  margin-right: 10px;
+  color: #777777;
+}
+section.login form .pw-keep {
+  margin-top: 20px;
+}
+section.login form .pw-keep a {
+  color: #00ADCC;
+}
+section.login form .pw-keep a:hover {
+  color: #0094AF;
+}
+section.login form button {
+  width: 100%;
+  margin-top: 100px;
+  padding: 0;
+  color: #00ADCC;
+  font-size: 18px;
+  line-height: 46px;
+  background-color: #fff;
+  border: 1px solid #00ADCC;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+}
+section.login form button:hover {
+  color: #fff;
+  background-color: #00ADCC;
+}
+
+/*# sourceMappingURL=main.css.map */
