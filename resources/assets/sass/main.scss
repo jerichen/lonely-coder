@@ -1,0 +1,493 @@
+@import "_code";
+$portrait: (max-width 1023px) (orientation portrait);
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.row {
+	@extend %flex-wrap;
+	margin-right: -15px;
+	margin-left: -15px;
+}
+.flex {
+	@extend %flex-wrap;
+}
+html, body {
+	min-height: 100%;
+	height: 100%;
+}
+section {
+	&.login-chart {
+		.container {
+			width: 305px;
+		}
+	}
+	&.landing {
+		@extend %flex;
+		height: 100%;
+		align-items: center;
+		.container {
+			.flex {
+				justify-content: center;
+			}
+		}
+		.logo-set {
+			@extend %flex;
+			flex-direction: column;
+			img {
+				&.slogan {
+					height: 65px;
+					align-self: flex-end;
+				}
+				&.logo {
+					height: 50px;
+				}
+			}
+		}
+		.login {
+			width: 100%;
+			ul {
+				@extend %list-reset;
+				margin-top: 75px;
+				li {
+					margin-top: 25px;
+					a {
+						display: block;
+						padding: 0 10px;
+						font-size: 18px;
+						line-height: 46px;
+						text-align: center;
+						border: 1px solid;
+						@include border-radius(30px);
+						&.kkbox-id {
+							color: $main-color;
+							border-color: $main-color;
+							&:hover {
+								color: $white-color;
+								background-color: $main-color;
+							}
+						}
+						&.facebook-id {
+							color: $gray-color;
+							border-color: $gray-color;
+							&:hover {
+								color: $white-color;
+								background-color: $gray-color;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.login {
+		.container {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		.prev-btn {
+			position: relative;
+			width: 100%;
+			height: 36px;
+			margin-bottom: 50px;
+			span {
+				display: block;
+				position: absolute;
+				height: 2px;
+				@include border-radius(2px);
+				background-color: $main-color;
+				&:nth-child(1), &:nth-child(3) {
+					width: 7px;
+				}
+				&:nth-child(1) {
+					@include transform(rotate(45deg) translate3d(14px, 14px, 0));
+				}
+				&:nth-child(3) {
+					@include transform(rotate(-45deg) translate3d(-10px, 10px, 0));
+				}
+				&:nth-child(2) {
+					top: 50%;
+					width: 23px;
+					@include translateY(-50%);
+				}
+			}
+		}
+		h2 {
+			margin: 0 0 10px;
+			color: $main-color;
+			font-size: 36px;
+			font-weight: 500;
+		}
+		h4 {
+			margin: 10px 0 0;
+			color: $main-color;
+			font-size: 24px;
+			font-weight: 300;
+		}
+		.hr {
+			width: 100%;
+			margin-top: 45px;
+			margin-bottom: 45px;
+			border-top: 1px solid $light-gray-color;
+			border-bottom: 1px solid #EAEAEA;
+		}
+		form {
+			width: 100%;
+			> label {
+				display: block;
+				position: relative;
+				margin-top: 35px;
+				font-size: 18px;
+				&::after {
+					@extend %before-after;
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					width: 100%;
+					height: 1px;
+					background-color: $gray-color;
+					@include translateX(-50%);
+				}
+				.label-title {
+					position: absolute;
+					display: block;
+					bottom: 50%;
+					color: $dark-color;
+					line-height: 1.15;
+					@include translateY(50%);
+					@include transition(all 0.3s);
+					span {
+						display: none;
+					}
+				}
+				input {
+					display: block;
+					width: 100%;
+					padding: 0;
+					line-height: 47px;
+					border: 0;
+					outline: none;
+					border-bottom: 1px solid $white-color;
+				}
+				&:hover, &.hasValue {
+					.label-title {
+						bottom: 100%;
+						color: $light-gray-color;
+						font-size: 13px;
+						@include translateX(0);
+						span {
+							display: block;
+						}
+					}
+				}
+			}
+			> div {
+				label {
+					font-size: 18px;
+					font-weight: 500;
+				}
+				.description {
+					margin-top: 10px;
+					padding-left: 24px;
+					color: $light-gray-color;
+					font-size: 14px;
+				}
+				+ div {
+					margin-top: 20px;
+				}
+				&.focus {
+					label {
+						color: $main-color;
+					}
+				}
+				&.pw-keep {
+					label {
+						font-size: 15px;
+						font-weight: 300;
+					}
+				}
+			}
+			[type*="radio"] {
+				position: relative;
+				top: -2px;
+				margin-right: 10px;
+				color: $gray-color;
+			}
+			.pw-keep {
+				@extend %flex;
+				@extend %flex-between;
+				margin-top: 20px;
+				a {
+					color: $main-color;
+					&:hover {
+						color: $dark-main-color;
+					}
+				}
+			}
+			button {
+				width: 100%;
+				margin-top: 100px;
+				padding: 0;
+				color: $main-color;
+				font-size: 18px;
+				line-height: 46px;
+				background-color: $white-color;
+				border: 1px solid $main-color;
+				@include transition(all 0.3s);
+				@include border-radius(30px);
+				&:hover {
+					color: $white-color;
+					background-color: $main-color;
+				}
+			}
+		}
+	}
+	&.features {
+		min-height: 100%;
+		height: 100%;
+		.container, .row {
+			height: 100%;
+		}
+		.info-col {
+			width: calc(100% - 345px);
+			padding: 50px;
+			.title {
+				@extend %flex;
+				@extend %flex-between;
+				margin-bottom: 30px;
+				align-items: baseline;
+				h1 {
+					margin: 0;
+					color: $main-color;
+					font-size: 48px;
+					line-height: 1.25;
+					font-weight: 100;
+				}
+				ul {
+					&.select {
+						@extend %list-reset;
+						@extend %flex;
+						li {
+							color: $gray-color;
+							+ li {
+								margin-left: 1em;
+							}
+							&.now {
+								color: $main-color;
+							}
+						}
+					}
+				}
+			}
+			.plate-title {
+				@extend %flex-items-center;
+				@extend %flex-between;
+				position: relative;
+				margin-bottom: 25px;
+				&::before {
+					@extend %before-after;
+					position: absolute;
+					top: 50%;
+					left: 1%;
+					width: 98%;
+					height: 1px;
+					background-color: $light-gray-color;
+					z-index: -1;
+				}
+				h3 {
+					padding-right: 10px;
+					margin: 0;
+					color: $gray-color;
+					font-size: 18px;
+					font-weight: 300;
+					background-color: $white-color;
+				}
+				.prev-next {
+					@extend %flex;
+					padding-left: 5px;
+					background-color: $white-color;
+					> span {
+						display: block;
+						padding: 5px 3px;
+						color: $light-gray-color;
+						line-height: 1;
+						@include transition(all, 0.3s);
+						i {
+							display: block;
+						}
+						&:hover {
+							color: $gray-color;
+						}
+					}
+				}
+			}
+			.card-list {
+				@extend %flex;
+				@extend %flex-between;
+				margin-bottom: 50px;
+				.card {
+					a {
+						display: block;
+					}
+					.card-img {
+						img {
+							width: 100%;
+							height: auto;
+						}
+					}
+					.card-body {
+						padding-top: 10px;
+						letter-spacing: normal;
+						.card-title {
+							color: $dark-color;
+							font-size: 17px;
+							font-weight: 400;
+							line-height: 1.35;
+							overflow: hidden;
+							display: -webkit-box;
+							-webkit-line-clamp: 2;
+							-webkit-box-orient: vertical;
+							&:hover {
+								color: $main-color;
+							}
+						}
+						p {
+							margin: 5px 0 10px;
+							color: $gray-color;
+							font-size: 14px;
+						}
+						.card-editor {
+							margin-top: 5px;
+							color: $light-gray-color;
+							font-size: 13px;
+							&:hover {
+								color: $main-color;
+							}
+						}
+					}
+				}
+				&.three-col {
+					.card {
+						width: calc( (100% - 30px) / 3);
+					}
+				}
+				&.four-col {
+					.card {
+						width: calc( (100% - 45px) / 4);
+					}
+				}
+				&.five-col {
+					.card {
+						width: calc( (100% - 60px) / 5);
+						.card-body {
+							.card-title {
+								min-height: 44px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.fixed-col {
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 345px;
+			height: 100%;
+			padding: 50px;
+			background-color: $main-color;
+			.logo {
+				img {
+					display: block;
+					margin: auto;
+					height: 80px;
+				}
+			}
+			.search-block {
+				margin-bottom: 35px;
+				form {
+					position: relative;
+				}
+				input {
+					width: 100%;
+					padding: 5px 45px 5px 20px;
+					color: $white-color;
+					border: 1px solid $white-color;
+					@include border-radius(20px);
+					outline: none;
+					background-color: transparent;
+					&::placeholder {
+						color: rgba($white-color, 0.5);
+					}
+				}
+				button {
+					position: absolute;
+					top: 50%;
+					right: 10px;
+					width: 26px;
+					height: 26px;
+					padding: 0;
+					margin-top: 2px;
+					border: 0;
+					outline: none;
+					background-color: transparent;
+					@include translateY(-50%);
+					&::before, &::after {
+						@extend %before-after;
+						position: absolute;
+					}
+					&::before {
+						top: 5px;
+						left: 5px;
+						width: 12px;
+						height: 12px;
+						border: 1px solid $white-color;
+						@include border-radius(50%);
+					}
+					&::after {
+						top: 16px;
+						left: 14px;
+						width: 5px;
+						height: 1px;
+						background-color: $white-color;
+						@include rotate(45deg);
+					}
+				}
+			}
+			.list-block {
+				overflow: scroll;
+				height: calc(100% - 156px);
+				> div {
+					display: table;
+					margin: auto;
+				}
+			}
+			ul {
+				@extend %list-reset;
+				position: relative;
+				+ ul {
+					margin-top: 45px;
+					&::before {
+						@extend %before-after;
+						position: absolute;
+						top: -12px;
+						width: 16px;
+						border: 1px solid $white-color;
+					}
+				}
+				li {
+					@extend %flex-wrap;
+					@extend %flex-between;
+					color: $white-color;
+					font-weight: 200;
+					&:first-child{
+						font-size: 14px;
+						font-weight: 500;
+					}
+				}
+			}
+		}
+	}
+}
