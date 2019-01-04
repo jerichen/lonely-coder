@@ -18,7 +18,7 @@
             <div class="login">
                 <ul>
                     <li>
-                        <a href="login.html" class="kkbox-id">使用KKBOX帳號登入</a>
+                        <a href="{{route('oauth')}}" class="kkbox-id">使用KKBOX帳號登入</a>
                     </li>
                 </ul>
             </div>
