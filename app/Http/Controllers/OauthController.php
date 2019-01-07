@@ -25,10 +25,10 @@ class OauthController extends Controller
                 'code' => $code,
                 'client_id' => env('KKBOX_CLIENT_ID'),
                 'client_secret' => env('KKBOX_CLIENT_SECRET'),
+                'redirect_uri' => env('KKBOX_OAUTH_REDIRECT_URL')
             ]
         ]);
         $response_array = json_decode($response->getBody()->getContents(), true);
-        dd($response_array);
         $access_token = $response_array['access_token'];
         return redirect()->route('profile',['token' => $access_token]);
     }
