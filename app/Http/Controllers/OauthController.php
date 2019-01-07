@@ -24,7 +24,6 @@ class OauthController extends Controller
                 'redirect_uri' => env('KKBOX_OAUTH_REDIRECT_URL')
             ]
         ]);
-        return $response;
         $response_array = json_decode($response->getBody()->getContents(), true);
         dd($response_array);
     }
