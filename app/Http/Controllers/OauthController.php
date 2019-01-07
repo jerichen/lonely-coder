@@ -10,21 +10,8 @@ class OauthController extends Controller
 {
     public function oauth (Request $request)
     {
-//        $url = env('KKBOX_OAUTH_BASE_URL') . '?response_type=code&state=0001&redirect_uri=' . env('KKBOX_OAUTH_REDIRECT_URL') . '&client_id=' .env('KKBOX_CLIENT_ID');
-
-//        dd($url);
-//        return redirect($url);
-
-        $client = new Client();
-        $response = $client->request('POST', 'https://account.kkbox.com/oauth2/token', [
-            'form_params' => [
-                'grant_type' => 'client_credentials',
-                'client_id' => env('KKBOX_CLIENT_ID'),
-                'client_secret' => env('KKBOX_CLIENT_SECRET'),
-            ]
-        ]);
-        $response_array = json_decode($response->getBody()->getContents(), true);
-        dd($response_array);
+        $url = env('KKBOX_OAUTH_BASE_URL') . '?response_type=code&state=0001&redirect_uri=' . env('KKBOX_OAUTH_REDIRECT_URL') . '&client_id=' .env('KKBOX_CLIENT_ID');
+        return redirect($url);
     }
 
     public function oauthCallback(Request $request)
