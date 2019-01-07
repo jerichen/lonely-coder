@@ -16,12 +16,11 @@ class OauthController extends Controller
 //        return redirect($url);
 
         $client = new Client();
-        $response = $client->request('GET', env('KKBOX_OAUTH_BASE_URL'), [
+        $response = $client->request('POST', 'https://account.kkbox.com/oauth2/token', [
             'form_params' => [
-                'state' => '0001',
+                'grant_type' => 'client_credentials',
                 'client_id' => env('KKBOX_CLIENT_ID'),
-                'response_type' => 'code',
-                'redirect_uri' => env('KKBOX_OAUTH_REDIRECT_URL')
+                'client_secret' => env('KKBOX_CLIENT_SECRET'),
             ]
         ]);
         $response_array = json_decode($response->getBody()->getContents(), true);
