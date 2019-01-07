@@ -16,7 +16,7 @@ class OauthController extends Controller
 //        return redirect($url);
 
         $client = new Client();
-        $response = $client->request('GET', env('KKBOX_ACCESS_TOKEN_URL'), [
+        $response = $client->request('GET', env('KKBOX_OAUTH_BASE_URL'), [
             'form_params' => [
                 'state' => '0001',
                 'client_id' => env('KKBOX_CLIENT_ID'),
