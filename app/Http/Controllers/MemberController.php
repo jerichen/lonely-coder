@@ -10,6 +10,9 @@ class MemberController extends Controller
 {
     public function getProfile (Request $request)
     {
+        $access_token = $request->cookie('token');
+        dd($access_token);
+
         $access_token = $request->token;
 
 //        $access_token = 'E72AqtJ1vBOXEo4swyEBDQ==';
