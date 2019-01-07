@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Cookie;
 
 class OauthController extends Controller
 {
@@ -29,7 +30,7 @@ class OauthController extends Controller
         ]);
         $response_array = json_decode($response->getBody()->getContents(), true);
 
-        Cookie::queue('token', $response_array['access_token']);
+        Cookie::queue('access_token', $response_array['access_token']);
         return redirect()->route('profile');
     }
 

@@ -8,7 +8,6 @@
                     {{ csrf_field() }}
                     {{ method_field('POST') }}
                     <input type="text" placeholder="搜尋" name="search">
-                    <input type="hidden" name="access_token" value="{{$data['access_token']}}">
                     <button>
                         <span class="sr-only">搜尋</span>
                     </button>

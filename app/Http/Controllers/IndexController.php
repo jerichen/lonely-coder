@@ -18,24 +18,23 @@ class IndexController extends Controller
         $client = new Client();
         $response = $client->request('GET', env('KKBOX_API_URL') . '/search', [
             'headers' => [
-                'Authorization' => 'Bearer ' . $request->get('access_token'),
+                'Authorization' => 'Bearer ' . $request->cookie('access_token'),
             ],
-            'form_params' => [
+            'query' => [
                 'q' => $request->get('search'),
                 'type' => 'track',
                 'territory' => 'TW',
             ]
         ]);
 
-        dd($response);
-        $data = json_decode($response->getBody()->getContents(), true);
+        return json_decode($response->getBody()->getContents(), true);
     }
 
     public function search(Request $request)
     {
-        dd($request->all());
         $track = $this->getTrack($request);
 
+        dd($track);
         return view('search');
     }
 }

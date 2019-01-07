@@ -8,14 +8,9 @@ use GuzzleHttp\Client;
 
 class MemberController extends Controller
 {
-    public function getProfile (Request $request)
+    public function profile (Request $request)
     {
-        $access_token = $request->cookie('token');
-        dd($access_token);
-
-        $access_token = $request->token;
-
-//        $access_token = 'E72AqtJ1vBOXEo4swyEBDQ==';
+        $access_token = $request->cookie('access_token');
 
         $client = new Client();
         $response = $client->request('GET', env('KKBOX_API_URL') . '/me', [
@@ -24,7 +19,6 @@ class MemberController extends Controller
                 ],
             ]);
         $data = json_decode($response->getBody()->getContents(), true);
-        $data['access_token'] = $access_token;
 
         return view('profile', [
             'data' => $data
