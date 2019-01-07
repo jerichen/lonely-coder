@@ -14,7 +14,7 @@ class OauthController extends Controller
 //        return redirect($url);
 
         $client = new Client();
-        $client->request('GET', env('KKBOX_ACCESS_TOKEN_URL'), [
+        $response = $client->request('GET', env('KKBOX_ACCESS_TOKEN_URL'), [
             'form_params' => [
                 'state' => '0001',
                 'client_id' => env('KKBOX_CLIENT_ID'),
@@ -22,6 +22,8 @@ class OauthController extends Controller
                 'redirect_uri' => env('KKBOX_OAUTH_REDIRECT_URL')
             ]
         ]);
+        $response_array = json_decode($response->getBody()->getContents(), true);
+        dd($response_array);
     }
 
     public function oauthCallback(Request $request)
