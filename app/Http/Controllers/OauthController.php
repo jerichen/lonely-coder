@@ -22,6 +22,7 @@ class OauthController extends Controller
         $response = $client->request('POST', env('KKBOX_ACCESS_TOKEN_URL'), [
             'form_params' => [
                 'grant_type' => 'authorization_code',
+                'code' => $code,
                 'client_id' => env('KKBOX_CLIENT_ID'),
                 'client_secret' => env('KKBOX_CLIENT_SECRET'),
             ]
