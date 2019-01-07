@@ -12,16 +12,14 @@ class MemberController extends Controller
     {
         $access_token = $request->token;
 
-        $access_token = 'E72AqtJ1vBOXEo4swyEBDQ==';
-
         $client = new Client();
         $response = $client->request('GET', env('KKBOX_API_URL') . '/me', [
                 'headers' => [
                     'Authorization' => 'Bearer ' . $access_token,
                 ],
             ]);
-
         $data = json_decode($response->getBody()->getContents(), true);
+        $data['access_token'] = $access_token;
 
         return view('profile', [
             'data' => $data
