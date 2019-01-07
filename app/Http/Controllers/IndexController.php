@@ -13,16 +13,28 @@ class IndexController extends Controller
         return view('welcome');
     }
 
-    public function search(Request $request)
+    private function getTrack($request)
     {
         $client = new Client();
-        $response = $client->request('GET', env('KKBOX_API_URL') . '/me', [
+        $response = $client->request('GET', env('KKBOX_API_URL') . '/search', [
             'headers' => [
-                'Authorization' => 'Bearer ' . $access_token,
+                'Authorization' => 'Bearer ' . $request->get('access_token'),
             ],
+            'form_params' => [
+                'q' => $request->get('search'),
+                'type' => 'track',
+                'territory' => 'TW',
+            ]
         ]);
+
+        dd($response);
         $data = json_decode($response->getBody()->getContents(), true);
-        $data['access_token'] = $access_token;
+    }
+
+    public function search(Request $request)
+    {
+        dd($request->all());
+        $track = $this->getTrack($request);
 
         return view('search');
     }

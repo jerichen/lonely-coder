@@ -5,6 +5,8 @@
         <div class="container">
             <div class="search-block">
                 <form action="{{route('search')}}">
+                    {{ csrf_field() }}
+                    {{ method_field('POST') }}
                     <input type="text" placeholder="搜尋" name="search">
                     <input type="hidden" name="access_token" value="{{$data['access_token']}}">
                     <button>

@@ -22,12 +22,12 @@ class OauthController extends Controller
         $response = $client->request('POST', env('KKBOX_ACCESS_TOKEN_URL'), [
             'form_params' => [
                 'grant_type' => 'authorization_code',
-                'code' => $code,
                 'client_id' => env('KKBOX_CLIENT_ID'),
                 'client_secret' => env('KKBOX_CLIENT_SECRET'),
             ]
         ]);
         $response_array = json_decode($response->getBody()->getContents(), true);
+        dd($response_array);
         $access_token = $response_array['access_token'];
         return redirect()->route('profile',['token' => $access_token]);
     }
