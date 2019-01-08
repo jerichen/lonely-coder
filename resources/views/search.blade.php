@@ -20,36 +20,19 @@
                             <div class="prev-next"><span class="prev"><i class="icon-chevron-thin-left"></i></span><span class="next"><i class="icon-chevron-thin-right"></i></span></div>
                         </div>
                         <div class="card-list four-col">
-                            <div class="card">
-                                <a class="card-img" href="#!"><img src="{{secure_asset('assets/img/d01.jpg')}}" alt="華語速爆新歌 (每週二五更新)"></a>
-                                <div class="card-body">
-                                    <a class="card-title" href="#!">華語速爆新歌 (每週二五更新)</a>
-                                    <a class="card-editor" href="#!">KKBOX 華語小編</a>
+                            @foreach ($new_hits_play_lists as $new_hits_play_list)
+                                <div class="card">
+                                    <a class="card-img" href="{{$new_hits_play_list['url']}}"><img src="{{$new_hits_play_list['images'][0]['url']}}" alt="{{$new_hits_play_list['title']}}"></a>
+                                    <div class="card-body">
+                                        <a class="card-title" href="{{$new_hits_play_list['url']}}">{{$new_hits_play_list['title']}}</a>
+                                        <a class="card-editor" href="{{$new_hits_play_list['owner']['url']}}">{{$new_hits_play_list['owner']['name']}}</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card">
-                                <a class="card-img" href="#!"><img src="{{secure_asset('assets/img/d02.jpg')}}" alt="西洋速爆新歌 (每週六更新)"></a>
-                                <div class="card-body">
-                                    <a class="card-title" href="#!">西洋速爆新歌 (每週六更新)</a>
-                                    <a class="card-editor" href="#!">KKBOX 西洋小編</a>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <a class="card-img" href="#!"><img src="{{secure_asset('assets/img/d03.jpg')}}" alt="日語速爆新歌 (每週日更新)"></a>
-                                <div class="card-body">
-                                    <a class="card-title" href="#!">日語速爆新歌 (每週日更新)</a>
-                                    <a class="card-editor" href="#!">KKBOX 日語小編</a>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <a class="card-img" href="#!"><img src="{{secure_asset('assets/img/d04.jpg')}}" alt="韓語速爆新歌 (每週一更新)"></a>
-                                <div class="card-body">
-                                    <a class="card-title" href="#!">韓語速爆新歌 (每週一更新)</a>
-                                    <a class="card-editor" href="#!">KKBOX 韓語小編</a>
-                                </div>
-                            </div>
+                            @endforeach
+                            
                         </div>
                     </div>
+
                     <div class="plate">
                         <div class="plate-title">
                             <h3>連假結束前，微微感傷</h3>

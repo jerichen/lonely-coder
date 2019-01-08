@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use GuzzleHttp\Client;
+use App\Repositories\NewHitsPlayListsRepository;
+use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
 
-    public function search(Request $request)
+    public function search(Request $request, NewHitsPlayListsRepository $new_hits_play_lists_repository)
     {
-        
-        return view('search');
+        $new_hits_play_lists = $new_hits_play_lists_repository->getNewHitsPlayLists();
+
+        return view('search', ['new_hits_play_lists' => $new_hits_play_lists]);
     }
 }
