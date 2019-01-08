@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use GuzzleHttp\Client;
+use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
@@ -24,7 +24,7 @@ class IndexController extends Controller
                 'q' => $request->get('search'),
                 'type' => 'track',
                 'territory' => 'TW',
-            ]
+            ],
         ]);
 
         return json_decode($response->getBody()->getContents(), true);

@@ -6,4 +6,4 @@ Route::get('/oauth', 'OauthController@oauth')->name('oauth');
 Route::get('/oauth/callback', 'OauthController@oauthCallback')->name('oauth.callback');
 Route::get('/profile', 'MemberController@profile')->name('profile');
 
-Route::get('/search', 'IndexController@search')->name('search');
+Route::get('/search', 'SearchController@search')->name('search');
