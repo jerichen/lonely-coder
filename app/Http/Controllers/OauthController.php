@@ -11,7 +11,9 @@ class OauthController extends Controller
 {
     public function oauth (Request $request)
     {
-        $url = env('KKBOX_OAUTH_BASE_URL') . '?redirect_uri=' . env('KKBOX_OAUTH_REDIRECT_URL') . '&client_id=' .env('KKBOX_CLIENT_ID') . '&response_type=code&state=0001';
+        $url = env('KKBOX_OAUTH_BASE_URL') . '?redirect_uri=' .
+            urlencode(env('KKBOX_OAUTH_REDIRECT_URL')) . '&client_id=' .
+            urlencode(env('KKBOX_CLIENT_ID')) . '&response_type=code&state=0001';
         return redirect($url);
     }
 
