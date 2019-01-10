@@ -64,13 +64,31 @@ class SearchController extends Controller
         return json_decode($response->getBody()->getContents(), true);
     }
 
+    private function getSearchAlbum($search)
+    {
+        $client = new Client();
+        $response = $client->request('GET', env('KKBOX_API_URL') . '/search', [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $this->access_token,
+            ],
+            'query' => [
+                'q' => $search,
+                'type' => 'album',
+                'territory' => 'TW',
+                'limit' => 5
+            ],
+        ]);
+
+        return json_decode($response->getBody()->getContents(), true);
+    }
+
     public function featured(Request $request, NewHitsPlayListsRepository $new_hits_play_lists_repository)
     {
         $user = $this->getUserProfile($request);
         if(!$user){
             return redirect()->route('login.index');
         }
-        
+
         $new_hits_play_lists = $new_hits_play_lists_repository->getNewHitsPlayLists();
         $featured_playlists = $this->getFeaturedPlaylists();
         $charts = $this->getCharts();
@@ -85,6 +103,12 @@ class SearchController extends Controller
 
     public function search(Request $request)
     {
-        return view('search');
+        $search = $request->get('search');
+        $albums = $this->getSearchAlbum($search);
+//        dd($albums['albums']['data']);
+
+        return view('search', [
+            'albums' => $albums['albums'],
+        ]);
     }
 }

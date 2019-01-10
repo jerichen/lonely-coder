@@ -71,9 +71,8 @@
                         <img src="{{secure_asset('assets/img/logo-white.svg')}}" alt="">
                     </div>
                     <div class="search-block">
-                        <form action="{{route('search')}}">
+                        <form action="{{route('search')}}" method="get">
                             {{ csrf_field() }}
-                            {{ method_field('GET') }}
                             <input type="text" placeholder="搜尋" name="search">
                             <button>
                                 <span class="sr-only">搜尋</span>
