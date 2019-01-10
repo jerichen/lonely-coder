@@ -72,7 +72,6 @@
                     </div>
                     <div class="search-block">
                         <form action="{{route('search')}}" method="get">
-                            {{ csrf_field() }}
                             <input type="text" placeholder="搜尋" name="search">
                             <button>
                                 <span class="sr-only">搜尋</span>
