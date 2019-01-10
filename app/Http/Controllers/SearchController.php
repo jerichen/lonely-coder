@@ -64,7 +64,7 @@ class SearchController extends Controller
         return json_decode($response->getBody()->getContents(), true);
     }
 
-    private function getSearchAlbum($search)
+    private function getSearch($search, $type)
     {
         $client = new Client();
         $response = $client->request('GET', env('KKBOX_API_URL') . '/search', [
@@ -73,7 +73,7 @@ class SearchController extends Controller
             ],
             'query' => [
                 'q' => $search,
-                'type' => 'album',
+                'type' => $type,
                 'territory' => 'TW',
                 'limit' => 5
             ],
@@ -104,11 +104,14 @@ class SearchController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $albums = $this->getSearchAlbum($search);
-//        dd($albums['albums']['data']);
+        $albums = $this->getSearch($search, 'album');
+        $artists = $this->getSearch($search, 'artist');
+        $playlists = $this->getSearch($search, 'playlist');
 
         return view('search', [
             'albums' => $albums['albums'],
+            'artists' => $artists['artists'],
+            'playlists' => $playlists['playlists'],
         ]);
     }
 }

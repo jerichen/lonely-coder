@@ -35,7 +35,16 @@
                             <h3>歌手</h3>
                         </div>
                         <div class="card-list five-col">
-
+                            @foreach($artists['data'] as $key => $val)
+                                <div class="card">
+                                    <a class="card-img" href="{{$val['url']}}">
+                                        <img src="{{$val['images'][0]['url']}}" alt="{{$val['name']}}">
+                                    </a>
+                                    <div class="card-body">
+                                        <a class="card-title" href="{{$val['url']}}">{{$val['name']}}</a>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="plate news">
@@ -43,7 +52,17 @@
                             <h3>歌單</h3>
                         </div>
                         <div class="card-list three-col">
-
+                            @foreach($playlists['data'] as $key => $val)
+                                <div class="card">
+                                    <a class="card-img" href="{{$val['url']}}">
+                                        <img src="{{$val['images'][0]['url']}}" alt="{{$val['title']}}">
+                                    </a>
+                                    <div class="card-body">
+                                        <a class="card-title" href="{{$val['url']}}">{{$val['title']}}</a>
+                                        <a class="card-editor" href="{{$val['owner']['url']}}">{{$val['owner']['name']}}</a>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
