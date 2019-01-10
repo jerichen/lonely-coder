@@ -20,8 +20,8 @@ class OAuthRepository
         $response = $client->request('POST', 'https://account.kkbox.com/oauth2/token', [
             'form_params' => [
                 'grant_type' => 'client_credentials',
-                'client_id' => 'c1353fd48a0ebc1c113ed055fa66f87d',
-                'client_secret' => '666967da8bf8aa6607695528924f212c',
+                'client_id' => env('KKBOX_CLIENT_ID'),
+                'client_secret' => env('KKBOX_CLIENT_SECRET'),
             ],
         ]);
 

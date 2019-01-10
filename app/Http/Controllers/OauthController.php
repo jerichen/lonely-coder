@@ -32,8 +32,8 @@ class OauthController extends Controller
         ]);
         $response_array = json_decode($response->getBody()->getContents(), true);
 
-        Cookie::queue('access_token', $response_array['access_token']);
-        return redirect()->secure(route('profile'));
+        Cookie::queue('user_token', $response_array['access_token']);
+        return redirect()->secure(route('featured'));
     }
 
 }
