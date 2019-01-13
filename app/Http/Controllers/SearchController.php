@@ -104,14 +104,20 @@ class SearchController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $albums = $this->getSearch($search, 'album');
-        $artists = $this->getSearch($search, 'artist');
-        $playlists = $this->getSearch($search, 'playlist');
+        $albums = [];
+        $artists = [];
+        $playlists = [];
+
+        if($search) {
+            $albums = $this->getSearch($search, 'album')['albums'];
+            $artists = $this->getSearch($search, 'artist')['artists'];
+            $playlists = $this->getSearch($search, 'playlist')['playlists'];
+        }
 
         return view('search', [
-            'albums' => $albums['albums'],
-            'artists' => $artists['artists'],
-            'playlists' => $playlists['playlists'],
+            'albums' => $albums,
+            'artists' => $artists,
+            'playlists' => $playlists,
         ]);
     }
 }
