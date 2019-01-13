@@ -1,5 +1,7 @@
 $(function(){
 	"use strict";
+	var width = $(window).width();
+
 	$("input[type*='text'], input[type*='password']").each(function(){
 		if($(this).val()){
 			$(this).parent().addClass('hasValue');
@@ -16,4 +18,9 @@ $(function(){
 		$(this).parent().siblings().removeClass('focus');
 		$(this).parent().addClass('focus');
 	});
+	if ( width <= 768 ){
+		$(".logo img[src*='img/logo-white.svg']").each(function(){
+			$(this).attr('src', 'img/logo-blue.svg');
+		});
+	}
 });
