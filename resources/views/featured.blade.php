@@ -66,10 +66,6 @@
                     </div>
                 </div>
                 <div class="fixed-col">
-                    <div class="logo">
-                        <h1>Hello {{$user['name']}}</h1>
-                        <img src="{{secure_asset('assets/img/logo-white.svg')}}" alt="">
-                    </div>
                     <div class="search-block">
                         <form action="{{route('search')}}" method="get">
                             <input type="text" placeholder="搜尋" name="search">
@@ -77,6 +73,14 @@
                                 <span class="sr-only">搜尋</span>
                             </button>
                         </form>
+                    </div>
+                    <div class="user-block">
+                        <a href="{{$user['url']}}" class="user-img">
+                            <img src="{{$user['images'][0]['url']}}" alt="{{$user['name']}}">
+                        </a>
+                        <div class="user">
+                            <a href="{{$user['url']}}" class="id">Hello {{$user['name']}}</a>
+                        </div>
                     </div>
                     <div class="list-block">
                         <div>
