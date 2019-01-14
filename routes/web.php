@@ -1,5 +1,6 @@
 <?php
 Route::get('', 'LoginController@index')->name('login.index');
+Route::get('login', 'LoginController@index')->name('login.index');
 
 Route::get('/oauth', 'OauthController@oauth')->name('oauth');
 Route::get('/oauth/callback', 'OauthController@oauthCallback')->name('oauth.callback');
